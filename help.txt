@@ -1,0 +1,23 @@
+http://docs.angularjs.org/api/angular.bootstrap
+http://stackoverflow.com/questions/16393302/apply-angular-js-to-new-dom-element-in-chrome-extension-content-script
+
+http://stackoverflow.com/questions/5643263/loading-html-into-page-element-chrome-extension
+
+http://stackoverflow.com/questions/16334054/inject-html-into-a-page-from-a-content-script
+
+
+angular migth not work
+	only one per app
+	needs to be boot stapped, i.e should be done after page load
+	http://stackoverflow.com/questions/16342603/how-to-run-two-separate-angular-js-apps-in-the-same-page
+http://docs.angularjs.org/api/ng.directive:ngApp
+
+research
+ handlebars (no updating) http://handlebarsjs.com/
+ mostache
+
+backbone
+knockout
+
+return html to page
+cloud
