@@ -1,0 +1,19 @@
+﻿{
+  "manifest_version": 2,
+  "name": "Manuel Filler ",
+  "version": "1",
+  "icons": {
+    "16": "icon_16.png",
+    "128": "icon_128.png"
+  },
+   "permissions": [
+     "activeTab",
+    "contextMenus"
+  ],
+  "background": {
+    "persistent": false,
+      "scripts": [
+      "eventPage.js"
+      ]
+}
+}
