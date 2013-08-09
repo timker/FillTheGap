@@ -22,8 +22,9 @@ function getURLInfo(url,callback)
         if (xhr.readyState == 4)
         {
         	console.log(xhr.responseText);
+        	callback(xhr.responseText);
             //return JSON.parse(xhr.responseText);
-            console.log(JSON.parse(xhr.responseText));
+           // console.log(JSON.parse(xhr.responseText));
         }
     }
 }
@@ -31,3 +32,8 @@ function getURLInfo(url,callback)
 
 getURLInfo(chrome.extension.getURL('/data.json'));
 
+
+getURLInfo(chrome.extension.getURL('/template.html'), function(data){
+console.log(data);
+
+});
