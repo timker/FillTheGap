@@ -21,3 +21,11 @@ knockout
 
 return html to page
 cloud
+
+
+
+next steps
+get data from extention
+
+do this, with extesion backend
+http://angularjs.org/

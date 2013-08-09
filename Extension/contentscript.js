@@ -12,7 +12,7 @@ $.get(chrome.extension.getURL('/template.html'), function(data) {
     // $($.parseHTML(data)).appendTo('body');
 
   	angular.element(document).ready(function() {
-    alert("moo");
+   // alert("moo");
          angular.bootstrap(document);
        });
 
