@@ -1,4 +1,5 @@
 
+console.log("loading");
 
   chrome.contextMenus.create(
 {
@@ -14,9 +15,22 @@ function onContextClickHandler(info, tab) {
 	//chrome.tabs.executeScript(tab.tabId, {code : "alert('yo');"});
 
 	chrome.tabs.executeScript(null, { file: "Scripts/jquery-2.0.3.js" }, function() {
-    	chrome.tabs.executeScript(null, { file: "content.js" });
-});
+		console.log("jqueryloaded");
+		chrome.tabs.executeScript(null, { file: "Scripts/angular.js" }, function() {
+			chrome.tabs.executeScript(tab.tabId, {file: "contentscript.js"});
+		});
+	});
+		
 //chrome.tabs.executeScript(tab.tabId, {file: "contentscript.js"});
+//hrome.tabs.executeScript(null, { file: "content.js" });
+
+}
+
+// todo
+function executeScripts(array)
+{
+
+
 }
 
  chrome.contextMenus.onClicked.addListener(onContextClickHandler); 

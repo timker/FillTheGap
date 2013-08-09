@@ -1,10 +1,31 @@
 
-alert("ahhh");
+//alert("ahhh");
 //var xhr = new XMLHttpRequest();
 //xhr.onreadystatechange = handleStateChange; // Implemented elsewhere.
 //xhr.open("GET", chrome.extension.getURL('/data.json'), true);
 //xhr.send()
 
+
+$.get(chrome.extension.getURL('/template.html'), function(data) {
+    $(data).appendTo('body');
+    // Or if you're using jQuery 1.8+:
+    // $($.parseHTML(data)).appendTo('body');
+
+  	angular.element(document).ready(function() {
+    alert("moo");
+         angular.bootstrap(document);
+       });
+
+});
+
+
+$.ajax({
+  url: chrome.extension.getURL('/template.html')
+
+}).done(function ( data ) {
+  console.log("data");
+  console.log(data);
+});
 
 
 function getURLInfo(url,callback)
@@ -30,10 +51,10 @@ function getURLInfo(url,callback)
 }
 
 
-getURLInfo(chrome.extension.getURL('/data.json'));
+//getURLInfo(chrome.extension.getURL('/data.json'));
 
 
-getURLInfo(chrome.extension.getURL('/template.html'), function(data){
-console.log(data);
+//getURLInfo(chrome.extension.getURL('/template.html'), function(data){
+//console.log(data);
 
-});
+//});
