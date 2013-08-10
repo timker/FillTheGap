@@ -1,0 +1,11 @@
+
+
+.manuel-dock
+{
+	position: fixed;
+	/*todo find largest number */
+	right: 40px;
+top: 0px;
+	z-index: 3000;
+	background-color: red;
+}

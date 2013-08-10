@@ -13,5 +13,5 @@
       "eventPage.js"
       ]
 },
-"web_accessible_resources": ["data.json","template.html"]
+"web_accessible_resources": ["data.json","template.html","content.css"]
 }
