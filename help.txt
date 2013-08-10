@@ -29,3 +29,12 @@ get data from extention
 
 do this, with extesion backend
 http://angularjs.org/
+
+also need test form copy
+css
+the subscribe button from here
+http://blog.angularjs.org/
+
+
+why does this page not work
+http://angularjs.org/

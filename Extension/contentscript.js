@@ -6,14 +6,34 @@
 //xhr.send()
 
 
+// todo check dom element doesn't exist
+// get template, or show/hide
 $.get(chrome.extension.getURL('/template.html'), function(data) {
-    $(data).appendTo('body');
+ 
+   // $(data).appendTo('body');
+    $("body").after(data);
+
+    //safer loading
+    //could find the first ref to ng-app or put at bottom, to in AT.Manuel.Root 
+    
+
     // Or if you're using jQuery 1.8+:
     // $($.parseHTML(data)).appendTo('body');
 
-  	angular.element(document).ready(function() {
+   var first = document.getElementById('AT.Manuel.Root');
+
+
+  	angular.element(first).ready(function() {
    // alert("moo");
-         angular.bootstrap(document);
+console.log(first);
+  
+        //angular.bootstrap(document);
+        angular.bootstrap(first);
+
+//also should remove head/ etc etc
+
+// this might still work if we convert to element first, instead of text?
+      // angular.bootstrap( data);
        });
 
 });
