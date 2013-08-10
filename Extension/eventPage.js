@@ -1,5 +1,15 @@
 
+
+
+
+
 console.log("loading");
+
+
+chrome.storage.local.set({fieldList: ["tim","rules","potatoes"]});
+chrome.storage.local.set({ todoList: [{text: 'larssssssn ang',done:false},{text:'blah',done:false}]});
+
+
 
   chrome.contextMenus.create(
 {

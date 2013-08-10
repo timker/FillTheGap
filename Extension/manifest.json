@@ -4,7 +4,8 @@
   "version": "1",
    "permissions": [
      "activeTab",
-    "contextMenus"
+    "contextMenus",
+    "storage"
   ],
   "background": {
     "persistent": false,

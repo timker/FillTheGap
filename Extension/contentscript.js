@@ -26,7 +26,8 @@ $.get(chrome.extension.getURL('/template.html'), function(data) {
   	angular.element(first).ready(function() {
    // alert("moo");
 console.log(first);
-  
+
+//chrome.storage.local.get  
         //angular.bootstrap(document);
         angular.bootstrap(first);
 
@@ -78,3 +79,34 @@ function getURLInfo(url,callback)
 //console.log(data);
 
 //});
+
+
+
+function TodoCtrl($scope)
+{
+
+var loadData = function()
+  {
+
+  chrome.storage.local.get('todoList', function(data) {
+        if (data.todoList)
+          {
+            console.log(data);
+  $scope.todos = data.todoList;
+   $scope.$apply();
+          }
+          
+      });
+
+
+
+  }
+
+$scope.totalTodos =4;
+//$scope.todos = [{text: 'larn ang',done:false},{text:'blah',done:false}];
+$scope.addTodo= function()
+{$scope.todos.push({text:"new", done:false})}
+
+loadData();
+
+}

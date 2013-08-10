@@ -1,3 +1,32 @@
+things todo before v1
+css
+add model
+update source
+copy to field
+cycle next input
+
+1.1
+some tidy
+publish
+
+1.2
+reload when source changes
+tidy
+sync 
+better edito
+shortcut key
+
+1.3
+bower intergration
+fix a couple of todos
+edit mode/ordering better css
+scroll bar
+
+1.4
+tab ui/list rotation/accordian
+minify?
+
+
 http://docs.angularjs.org/api/angular.bootstrap
 http://stackoverflow.com/questions/16393302/apply-angular-js-to-new-dom-element-in-chrome-extension-content-script
 
@@ -22,7 +51,7 @@ knockout
 return html to page
 cloud
 
-
+learn sublime better
 
 next steps
 get data from extention
@@ -31,10 +60,30 @@ do this, with extesion backend
 http://angularjs.org/
 
 also need test form copy
+
+
 css
 the subscribe button from here
 http://blog.angularjs.org/
 
+http://tympanus.net/codrops/2013/05/07/a-collection-of-page-transitions/
+http://www.hongkiat.com/blog/css3-bounce-effect/
+http://tympanus.net/codrops/2011/11/07/animated-buttons-with-css3/ demo 4
+http://tympanus.net/codrops/2011/10/24/creative-css3-animation-menus/
+http://tympanus.net/Tutorials/CSS3ContentTabs/index3.html
+http://tympanus.net/Tutorials/CustomDropDownListStyling/index5.html
+https://github.com/daneden/animate.css
 
-why does this page not work
-http://angularjs.org/
+
+
+yeoman
+bower
+
+
+simple-server public 3000
+
+make everything a web component so we don't leak css...javascript?
+http://html5-demos.appspot.com/static/webcomponents/index.html#3
+
+learn about
+http://www.infoq.com/news/2012/11/Testacular
