@@ -1,0 +1,57 @@
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+
+</head>
+<body>
+<input value="asdf" />
+
+<div onclick="whatelemet()";>
+click
+</div>
+
+<div class="inputs">
+  <p>
+    <input type="text" /><br />
+    <input type="text" />
+  </p>
+  <p>
+    <input type="password" />
+  </p>
+</div>
+<div id="fo">focusout fire</div>
+<div id="b">blur fire</div>
+
+z	<script type="text/javascript">
+
+function whatelemet()
+{
+
+  console.log(document.activeElement);
+//alert("mello");
+}
+
+//$('#filter').blur(function() {
+//  $('#options').hide();
+//});
+$( "*" ).blur(function() {
+ // alert( "Handler for .blur() called." );
+});
+
+var fo = 0, b = 0;
+$("*").focusout(function() {
+  fo++;
+  $("#fo")
+    .text("focusout fired: " + fo + "x");
+}).blur(function() {
+  b++;
+  $("#b")
+    .text("blur fired: " + b + "x");
+ 
+});
+	</script>
+
+</body>
+
+
+</html>
