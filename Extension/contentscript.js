@@ -11,6 +11,7 @@
      //   return;
      // }
 
+    // todo should we add simpple html element as the next request/work might be slow
     $.get(chrome.extension.getURL('/template.html'), function(data) {
         $("body").after(data);
         //safer loading
@@ -97,8 +98,20 @@ function FillCtrl($scope)
 
   $scope.addItem = function()
   {
-    $scope.fillList.push({text:$scope.todoText})
+    console.log($scope.newItemText);
+    $scope.fillList.push({text:$scope.newItemText})
     chrome.storage.local.set({ fillList: $scope.fillList});
+  }
+
+  $scope.deleteItem = function(item)
+  {
+    console.log(item);
+    var index = $scope.fillList.indexOf(item);
+    if (index != -1) {
+      $scope.fillList.splice(index, 1);
+      // todo rename to persist    
+      chrome.storage.local.set({ fillList: $scope.fillList});
+    }
   }
 
   $scope.ApplyItemToTextField = function(item)
@@ -111,7 +124,6 @@ function FillCtrl($scope)
   {
     alert("close");
   }
-
 
   loadData();
 }

@@ -9,3 +9,22 @@
 	z-index: 3000;
 	background-color: 	#694F34;
 }
+
+.fillItem:hover{
+background-color: red;
+
+};
+
+
+.fillItem
+{
+float: left;
+
+}
+
+
+.fillItemDelete
+{
+	float: right
+	
+}

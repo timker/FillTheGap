@@ -7,9 +7,9 @@
 
     <div ng-controller="FillCtrl">
       <ul class="unstyled">
-        <div ng-repeat="item in fillList">
-          <a   ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
-          <a ng-cick="delete(item)">d</a>
+        <div class="fillItemContainer" ng-repeat="item in fillList">
+          <a class="fillItem"   ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
+          <a class="fillItemDelete" ng-click="deleteItem(item)">d</a>
         </div>
       </ul>
       <form ng-submit="addItem()">
