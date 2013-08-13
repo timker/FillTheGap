@@ -3,31 +3,46 @@ no more gaps
 output
 
 
-things todo before v1
+things todo before v0.5 (personal test)
+
+choose name
+look into sync
+simple css
+
+things todo before v0.9 (share dev)
+
 css
+remove test angular
+
+things todo befor v1
+
+rename repo
+readme.md
+delete item
 done - add model
 done - update source
 done - copy to field
-cycle next input
-delete item
+done - cycle next input
 close button.. we could just use the context menu
-
 done - fix bug, double context will double the items
-conttext on input
+bug is updating buttons http://www.echoecho.com/htmlforms10.htm
+
 
 1.1
 some tidy
 publish
 test sync
 
-fix ifame bug
+fix iframe bug
 http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
 
 google search doesn't dissapear
 http://www.echoecho.com/htmlforms10.htm
 
-is updating buttons
-http://www.echoecho.com/htmlforms10.htm
+contenteditable
+
+
+bug doesn't cycle back to start on tabs
 
 1.2
 reload when source changes
@@ -46,6 +61,8 @@ edit mode/ordering better css
 scroll bar
 
 fill button to grab fields
+jslint
+options page to autofill
 
 1.4
 tab ui/list rotation/accordian

@@ -83,35 +83,35 @@ var pageAccessor = (function () {
 
 
 
-function TodoCtrl($scope)
+function FillCtrl($scope)
 {
 
   var loadData = function()
   {
-  chrome.storage.local.get('todoList', function(data) {
-        if (data.todoList)
-          {
-            console.log(data);
-            $scope.todos = data.todoList;
-            $scope.$apply();
-          }
-      });
+    chrome.storage.local.get('fillList', function(data) {
+        // console.log(data);
+        $scope.fillList = data.fillList || [];
+        $scope.$apply();
+    });
   }
 
-  $scope.totalTodos =4;
-
-  $scope.addTodo = function()
+  $scope.addItem = function()
   {
-    $scope.todos.push({text:$scope.todoText, done:false})
-    chrome.storage.local.set({ todoList: $scope.todos});
+    $scope.fillList.push({text:$scope.todoText})
+    chrome.storage.local.set({ fillList: $scope.fillList});
   }
 
-$scope.ApplyItemToTextField = function(todo)
+  $scope.ApplyItemToTextField = function(item)
   {
-  pageAccessor.setValue(todo.text);
-
+    pageAccessor.setValue(item.text);
   }
 
-loadData();
 
+  $scope.close = function()
+  {
+    alert("close");
+  }
+
+
+  loadData();
 }

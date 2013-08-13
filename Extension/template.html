@@ -1,30 +1,28 @@
+<div>
 
-<body >
   <div id="AT_Manuel_Root" class="manuel-dock" ng-app>
-    <div onclick='console.log($(":focus"))'>
-      how is active
+    <header>
+        header
+    </header>
+
+    <div ng-controller="FillCtrl">
+      <ul class="unstyled">
+        <div ng-repeat="item in fillList">
+          <a   ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
+          <a ng-cick="delete(item)">d</a>
+        </div>
+      </ul>
+      <form ng-submit="addItem()">
+        <input type="text" ng-model="newItemText"  size="30"
+               placeholder="add new item here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+      <div ng-click="close()">Close</div>
     </div>
-  	<div>
-	      <label>Name:</label>
-	      <input type="text" ng-model="yourName" placeholder="Enter a name here">
-	      <hr>
-	      <h1>Hello {{yourName}}!</h1>
-		</div>
-		    <div ng-controller="TodoCtrl">
-          <div>total todos {{totalTodos}}</div>
-    <span>{{remaining()}} of {{todos.length}} remaining</span>
-    [ <a href="" ng-click="archive()">archive</a> ]
-    <ul class="unstyled">
-      <li ng-repeat="todo in todos">
-        
-        <div ng-click="ApplyItemToTextField(todo)">{{todo.text}}</div>
-      </li>
-    </ul>
-    <form ng-submit="addTodo()">
-      <input type="text" ng-model="todoText"  size="30"
-             placeholder="add new todo here">
-      <input class="btn-primary" type="submit" value="add">
-    </form>
+
+    <footer>
+    </footer>
+
   </div>
-  </div>
-</body>
+
+</div>
