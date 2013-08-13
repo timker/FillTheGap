@@ -77,26 +77,20 @@ var testModule = (function () {
   var lastElementFocused;
   
    init = function() {
-      //alert("init");
       // todo this needs to be "live or on"
-      $( "*" ).blur(function(args) {
-        console.log(args);
-         //  $(args.currentTarget).val("www");
+      // todo does not seem to cycle through ne elements
+      $("*").on('blur', function(args) {
+      //$( "*" ).blur(function(args) {
+      // console.log("lost focus");
          lastElementFocused = args.currentTarget;
-        //lastElementFocused
-        // alert( "Handler for .blur() called." );
-        //  alert("b");
       });
 
     };
 
     nextItem = function(){
-//alert("moving to next");
-//alert("s");
-//console.log($(lastElementFocused).next('input, select'));
-  //$(lastElementFocused).next('input, select').focus();
-   
-            var allInputs = $("input,select");
+               //should onlt be txt inputs,textarea
+               var allInputs = $("input,select");
+            console.log(allInputs);
             for (var i = 0; i < allInputs.length; i++) {
                 if (allInputs[i] == lastElementFocused) {
                   // todo I think this might be for checkboxes
@@ -104,6 +98,8 @@ var testModule = (function () {
                   //    i++;
                   //}
 console.log("found");
+console.log(i + 1);
+console.log(allInputs.length);
                     if ((i + 1) < allInputs.length) {
                        $(allInputs[i + 1]).focus();
                      } else {
@@ -129,18 +125,6 @@ init();
 
 })();
 
-//testModule.setValue("cake");
-// Usage:
-
-// Increment our counter
-//testModule.incrementCounter();
-
-// Check the counter value and reset
-// Outputs: 1
-//testModule.resetCounter();
-
-
-//lastItem.setValue()
 
 
 
