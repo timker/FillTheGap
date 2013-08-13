@@ -1,5 +1,6 @@
 Fill the Gap
-
+no more gaps
+output
 
 
 things todo before v1
@@ -17,6 +18,16 @@ conttext on input
 1.1
 some tidy
 publish
+test sync
+
+fix ifame bug
+http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
+
+google search doesn't dissapear
+http://www.echoecho.com/htmlforms10.htm
+
+is updating buttons
+http://www.echoecho.com/htmlforms10.htm
 
 1.2
 reload when source changes

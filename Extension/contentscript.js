@@ -77,21 +77,41 @@ var testModule = (function () {
   var lastElementFocused;
   
    init = function() {
-      alert("init");
-      // this needs to be "live or on"
+      //alert("init");
+      // todo this needs to be "live or on"
       $( "*" ).blur(function(args) {
-   console.log(args);
- //  $(args.currentTarget).val("www");
-   lastElementFocused = args.currentTarget;
-    //lastElementFocused
-    // alert( "Handler for .blur() called." );
-      //  alert("b");
+        console.log(args);
+         //  $(args.currentTarget).val("www");
+         lastElementFocused = args.currentTarget;
+        //lastElementFocused
+        // alert( "Handler for .blur() called." );
+        //  alert("b");
       });
 
     };
 
     nextItem = function(){
-alert("moving to next");
+//alert("moving to next");
+//alert("s");
+//console.log($(lastElementFocused).next('input, select'));
+  //$(lastElementFocused).next('input, select').focus();
+   
+            var allInputs = $("input,select");
+            for (var i = 0; i < allInputs.length; i++) {
+                if (allInputs[i] == lastElementFocused) {
+                  // todo I think this might be for checkboxes
+                  // while ((allInputs[i]).name == (allInputs[i + 1]).name) {
+                  //    i++;
+                  //}
+console.log("found");
+                    if ((i + 1) < allInputs.length) {
+                       $(allInputs[i + 1]).focus();
+                     } else {
+                       $(allInputs[0]).focus();
+                     }
+                }
+            }
+
 
     };
 
@@ -100,6 +120,7 @@ init();
 
     setValue: function (value) {
       $(lastElementFocused).val(value);
+      nextItem();
     //alert(value);
     },
 
