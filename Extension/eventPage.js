@@ -17,7 +17,8 @@ chrome.storage.local.set({fieldList: ["tim","rules","potatoes"]});
 {
 	"title": "Show Fill",
   "type":"normal",
-  "id": "show"
+  "id": "show",
+  "contexts":["editable"]
 });
 
 function onContextClickHandler(info, tab) {

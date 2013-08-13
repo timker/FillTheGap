@@ -1,13 +1,18 @@
+Fill the Gap
+
+
+
 things todo before v1
 css
 done - add model
 done - update source
-copy to field
+done - copy to field
 cycle next input
 delete item
 close button.. we could just use the context menu
 
-fix bug, double context will double the items
+done - fix bug, double context will double the items
+conttext on input
 
 1.1
 some tidy
@@ -34,7 +39,7 @@ fill button to grab fields
 1.4
 tab ui/list rotation/accordian
 minify?
-
+context icon
 
 http://docs.angularjs.org/api/angular.bootstrap
 http://stackoverflow.com/questions/16393302/apply-angular-js-to-new-dom-element-in-chrome-extension-content-script
