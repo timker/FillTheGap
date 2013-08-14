@@ -1,15 +1,20 @@
 
 
-.manuel-dock
+#AT_Manuel_Root.manuel-dock
 {
 	position: fixed;
 	/*todo find largest number */
 	right: 40px;
 	top: 0px;
 	z-index: 3000;
-	background-color: 	#694F34;
+padding: 4px;
+border-top: 0px;
+border: 1px solid rgb(204, 204, 204);
+ 
+/*	background-color: 	#694F34;*/
 }
 
+/*
 .fillItem:hover{
 background-color: red;
 
@@ -26,5 +31,54 @@ float: left;
 .fillItemDelete
 {
 	float: right
-	
+
+}
+
+*/
+
+
+
+
+/*#AT_Manuel_Root div {
+  width: 200px;
+}*/
+ 
+#AT_Manuel_Root h2 {
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+ 
+#AT_Manuel_Root ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+#AT_Manuel_Root li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+ 
+ 
+#AT_Manuel_Root li:last-child {
+  border: none;
+}
+ 
+#AT_Manuel_Root li a {
+  text-decoration: none;
+  color: #000;
+  /*display: block;
+  width: 200px;*/
+ 
+  /*-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;*/
+  transition:  background-color 0.3s ease;
+}
+ 
+li a:hover {
+/*  font-size: 30px;*/
+  background: #f6f6f6;
 }

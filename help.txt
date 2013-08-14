@@ -1,6 +1,11 @@
+FTG
+NMG
 Fill the Gap
 no more gaps
 output
+
+
+pull/close bottom
 
 
 things todo before v0.5 (personal test)
@@ -8,6 +13,7 @@ things todo before v0.5 (personal test)
 choose name
 look into sync
 simple css
+http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/
 
 things todo before v0.9 (share dev)
 
@@ -16,9 +22,10 @@ remove test angular
 
 things todo befor v1
 
+reaname help.txt
 rename repo
 readme.md
-delete item
+done - delete item
 done - add model
 done - update source
 done - copy to field
@@ -32,6 +39,8 @@ bug is updating buttons http://www.echoecho.com/htmlforms10.htm
 some tidy
 publish
 test sync
+pull-we can remove the add completely
+
 
 fix iframe bug
 http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
@@ -41,8 +50,9 @@ http://www.echoecho.com/htmlforms10.htm
 
 contenteditable
 
+looks wrong on stack overflow
 
-bug doesn't cycle back to start on tabs
+bug doesn't cycle back to start on tabs http://api.jquery.com/focusout/
 
 1.2
 reload when source changes
@@ -59,6 +69,7 @@ bower intergration
 fix a couple of todos
 edit mode/ordering better css
 scroll bar
+
 
 fill button to grab fields
 jslint

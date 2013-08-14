@@ -2,19 +2,24 @@
 
   <div id="AT_Manuel_Root" class="manuel-dock" ng-app>
     <header>
-        header
+      <h2>
+        F T G
+      </h2>
     </header>
 
     <div ng-controller="FillCtrl">
-      <ul class="unstyled">
-        <div class="fillItemContainer" ng-repeat="item in fillList">
+      <ul>
+        <li class="fillItemContainer" ng-repeat="item in fillList">
+        <div>
+          
           <a class="fillItem"   ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
           <a class="fillItemDelete" ng-click="deleteItem(item)">d</a>
-        </div>
+          
+          <div>
+        </li>
       </ul>
       <form ng-submit="addItem()">
-        <input type="text" ng-model="newItemText"  size="30"
-               placeholder="add new item here">
+        <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
         <input class="btn-primary" type="submit" value="add">
       </form>
       <div ng-click="close()">Close</div>
