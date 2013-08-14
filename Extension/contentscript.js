@@ -86,11 +86,10 @@ var pageAccessor = (function () {
 
 function FillCtrl($scope)
 {
-
   var loadData = function()
   {
-    chrome.storage.local.get('fillList', function(data) {
-        // console.log(data);
+    chrome.storage.sync.get('fillList', function(data) {
+        console.log(data);
         $scope.fillList = data.fillList || [];
         $scope.$apply();
     });
@@ -100,7 +99,11 @@ function FillCtrl($scope)
   {
     console.log($scope.newItemText);
     $scope.fillList.push({text:$scope.newItemText})
-    chrome.storage.local.set({ fillList: $scope.fillList});
+    console.log($scope.fillList);
+    console.log({text:$scope.newItemText});
+    $scope.newItemText = "";
+
+    persist();
   }
 
   $scope.deleteItem = function(item)
@@ -108,9 +111,8 @@ function FillCtrl($scope)
     console.log(item);
     var index = $scope.fillList.indexOf(item);
     if (index != -1) {
-      $scope.fillList.splice(index, 1);
-      // todo rename to persist    
-      chrome.storage.local.set({ fillList: $scope.fillList});
+      $scope.fillList.splice(index, 1);    
+      persist();
     }
   }
 
@@ -124,6 +126,12 @@ function FillCtrl($scope)
   {
     alert("close");
   }
+
+
+var persist = function(){
+  chrome.storage.sync.set({ fillList: $scope.fillList});
+  chrome.storage.sync.getBytesInUse(null, function(ints){console.log(ints)})
+}
 
   loadData();
 }

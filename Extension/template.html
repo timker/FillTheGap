@@ -5,29 +5,32 @@
       <h2>
         F T G
       </h2>
+     <!-- <div>edit</div>-->
     </header>
 
     <div ng-controller="FillCtrl">
+
       <ul>
         <li class="fillItemContainer" ng-repeat="item in fillList">
         <div>
-          
-          <a class="fillItem"   ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
-          <a class="fillItemDelete" ng-click="deleteItem(item)">d</a>
-          
+          <a class="fillItem" contenteditable   ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
+          <a class="fillItemDelete" ng-click="deleteItem(item)">✖</a>
           <div>
         </li>
       </ul>
+
       <form ng-submit="addItem()">
         <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
         <input class="btn-primary" type="submit" value="add">
       </form>
-      <div ng-click="close()">Close</div>
+
+     <!-- <div alt="to be done">pull/pullall</div>
+      <div class="triangle" ng-click="close()">Close</div>
+-->
     </div>
 
     <footer>
     </footer>
-
   </div>
 
 </div>
