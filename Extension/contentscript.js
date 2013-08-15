@@ -124,7 +124,8 @@ function FillCtrl($scope)
 
   $scope.close = function()
   {
-    alert("close");
+     $('#AT_Manuel_Root').remove();
+  //  alert("close");
   }
 
 

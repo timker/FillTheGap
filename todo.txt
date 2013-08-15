@@ -1,31 +1,36 @@
-FTG
-NMG
 Fill the Gap
-no more gaps
-output
 
 
+Is a companion for chromes autofill, it is not intended to be a replacement. The idea is to do the bits that autofill can't
 
-pull/close bottom
+How to use, right click a context menu, 
+right click
 
++ one click update of text fields
++ uses event pages, so doesn't take up memory
++ syncs between computers
+
+github
 
 things todo before v0.5 (personal test)
 
-choose name
-look into sync
-simple css
-http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/
+done - choose name
+done - look into sync
+done - simple css http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/
 
 things todo before v0.9 (share dev)
 
 css
+close button
 done.. remove test angular
+description site/manifest
+
 
 things todo befor v1
 
-reaname help.txt
-rename repo
-readme.md
+done - reaname help.txt
+done - rename repo
+done - readme.md
 done - delete item
 done - add model
 done - update source
@@ -34,7 +39,9 @@ done - cycle next input
 close button.. we could just use the context menu
 done - fix bug, double context will double the items
 bug is updating buttons http://www.echoecho.com/htmlforms10.htm
-
+better css
+better readme.md
+analyics in store
 
 1.1
 some tidy
@@ -148,3 +155,5 @@ learn about
 http://www.infoq.com/news/2012/11/Testacular
 
 css issues
+
+pull/close bottom

@@ -1,7 +1,7 @@
 ﻿{
   "manifest_version": 2,
   "name": "Fill The Gap ",
-  "version": "1",
+  "version": "0.5",
    "permissions": [
      "activeTab",
     "contextMenus",

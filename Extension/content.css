@@ -95,6 +95,18 @@ font: 200 13px/100% Helvetica, Verdana, sans-serif;
 */
 }
 
+#AT_Manuel_Root .close
+{
+  margin: 5px;
+height: 15px;
+border: 1px solid #ccc;
+}
+
+#AT_Manuel_Root .close:hover {
+/*  font-size: 30px;*/
+  background: #f6f6f6;
+cursor: pointer;
+}
 
 
 #AT_Manuel_Root .triangle
