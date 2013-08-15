@@ -19,7 +19,7 @@ http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-c
 things todo before v0.9 (share dev)
 
 css
-remove test angular
+done.. remove test angular
 
 things todo befor v1
 
