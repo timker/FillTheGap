@@ -58,11 +58,21 @@ float: left;
  
 #AT_Manuel_Root li {
  /* font: 200 20px/1.5 Helvetica, Verdana, sans-serif;*/
-font: 200 13px/100% Helvetica, Verdana, sans-serif;
+/*font: 200 13px/100% Helvetica, Verdana, sans-serif;*/
+font: 200 13px/100% Calibri,YetAnotherFontBase;
   border-bottom: 1px solid #ccc;
+clear: both;
 }
  
- 
+ /*just to stop parent collapsing*/
+ #AT_Manuel_Root li:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+
 #AT_Manuel_Root li:last-child {
   border: none;
 }
@@ -70,9 +80,10 @@ font: 200 13px/100% Helvetica, Verdana, sans-serif;
 #AT_Manuel_Root li .fillItem {
   text-decoration: none;
   color: #000;
-  display: block;
+  display: inline-block;
 /*  width: 200px;*/
-  font: left;
+  float: left;
+  width: 80%;
   padding: 5px;
  
   /*-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -90,16 +101,18 @@ font: 200 13px/100% Helvetica, Verdana, sans-serif;
 #AT_Manuel_Root li a.fillItemDelete {
 /*  font-size: 30px;*/
  /* background: #f6f6f6;*/
+ margin-top: 6px;/*alighn of X */
   float: right;
+  width: 10%;
   /*display: none;
 */
 }
 
 #AT_Manuel_Root .close
 {
-  margin: 5px;
-height: 15px;
-border: 1px solid #ccc;
+  margin: 3px;
+  height: 15px;
+  border: 1px solid #ccc;
 }
 
 #AT_Manuel_Root .close:hover {
