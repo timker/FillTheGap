@@ -152,5 +152,6 @@ css issues
 
 ideas
 mark an item as piece.. eg credcard, can be put in 4 or one lot
-
+needs a skip button
+bugs
 skip readonly elements
