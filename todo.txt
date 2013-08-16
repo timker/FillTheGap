@@ -148,3 +148,9 @@ learn about
 http://www.infoq.com/news/2012/11/Testacular
 
 css issues
+
+
+ideas
+mark an item as piece.. eg credcard, can be put in 4 or one lot
+
+skip readonly elements
