@@ -161,4 +161,13 @@ http://www.infoq.com/news/2012/11/Testacular
 
 css issues
 
+<<<<<<< HEAD
 pull/close bottom
+=======
+
+ideas
+mark an item as piece.. eg credcard, can be put in 4 or one lot
+needs a skip button
+bugs
+skip readonly elements
+>>>>>>> 99d6ab318b6ca10f0d3d28a6f52f1f65d1e72c19
