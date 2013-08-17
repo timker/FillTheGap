@@ -1,59 +1,47 @@
+FTG
+NMG
 Fill the Gap
+no more gaps
+output
 
 
-Is a companion for chromes autofill, it is not intended to be a replacement. The idea is to do the bits that autofill can't
 
-How to use, right click a context menu, 
-right click
-
-+ one click update of text fields
-+ uses event pages, so doesn't take up memory
-+ syncs between computers
-
-github
-
+pull/close bottom
 
 
 things todo before v0.5 (personal test)
 
-done - choose name
-done - look into sync
-done - simple css http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/
+choose name
+look into sync
+simple css
+http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/
 
 things todo before v0.9 (share dev)
 
-done - css
-done - close button
-done - remove test angular
-
-description site/manifest
-bug is updating buttons http://www.echoecho.com/htmlforms10.htm
-
+css
+done.. remove test angular
 
 things todo befor v1
 
-done - reaname help.txt
-done - rename repo
-done - readme.md
+reaname help.txt
+rename repo
+readme.md
 done - delete item
 done - add model
 done - update source
 done - copy to field
 done - cycle next input
-done - close button.. we could just use the context menu
+close button.. we could just use the context menu
 done - fix bug, double context will double the items
+bug is updating buttons http://www.echoecho.com/htmlforms10.htm
 
-icon
-better readme.md
-analyics in store
 
 1.1
 some tidy
 publish
 test sync
 pull-we can remove the add completely
-better css
-options page
+
 
 fix iframe bug
 http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
@@ -161,19 +149,9 @@ http://www.infoq.com/news/2012/11/Testacular
 
 css issues
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-pull/close bottom
-=======
-=======
->>>>>>> 99d6ab318b6ca10f0d3d28a6f52f1f65d1e72c19
 
 ideas
 mark an item as piece.. eg credcard, can be put in 4 or one lot
 needs a skip button
 bugs
 skip readonly elements
-<<<<<<< HEAD
->>>>>>> 99d6ab318b6ca10f0d3d28a6f52f1f65d1e72c19
-=======
->>>>>>> 99d6ab318b6ca10f0d3d28a6f52f1f65d1e72c19
