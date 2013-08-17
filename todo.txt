@@ -5,6 +5,18 @@ no more gaps
 output
 
 
+Is a companion for chromes autofill, it is not intended to be a replacement. The idea is to do the bits that autofill can't
+
+How to use, right click a context menu, 
+right click
+
+one click update of text fields
+uses event pages, so doesn't take up memory
+syncs between computers
+
+github
+
+
 
 pull/close bottom
 
@@ -31,9 +43,16 @@ done - add model
 done - update source
 done - copy to field
 done - cycle next input
-close button.. we could just use the context menu
+done - close button
 done - fix bug, double context will double the items
 bug is updating buttons http://www.echoecho.com/htmlforms10.htm
+better css
+options page
+
+icon
+better readme.md
+analyics in store
+
 
 
 1.1
