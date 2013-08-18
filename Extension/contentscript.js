@@ -47,7 +47,7 @@ var pageAccessor = (function () {
 
   nextItem = function(){
     //should onlt be txt inputs,textarea
-    var allInputs = $("input,select");
+    var allInputs = $("input[type='text']");
     console.log(allInputs);
     for (var i = 0; i < allInputs.length; i++) {
       if (allInputs[i] == lastElementFocused) {

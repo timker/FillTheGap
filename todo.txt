@@ -1,9 +1,4 @@
 FTG
-NMG
-Fill the Gap
-no more gaps
-output
-
 
 Is a companion for chromes autofill, it is not intended to be a replacement. The idea is to do the bits that autofill can't
 
@@ -14,30 +9,24 @@ one click update of text fields
 uses event pages, so doesn't take up memory
 syncs between computers
 
-github
-
-
-
-pull/close bottom
-
 
 things todo before v0.5 (personal test)
 
-choose name
-look into sync
-simple css
-http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/
+done - choose name
+done - look into sync
+done - simple css
 
 things todo before v0.9 (share dev)
+
+start updating version log
 
 css
 done.. remove test angular
 
-things todo befor v1
+things todo before v1
 
-reaname help.txt
-rename repo
-readme.md
+done - reaname help.txt
+done - rename repo
 done - delete item
 done - add model
 done - update source
@@ -45,21 +34,25 @@ done - copy to field
 done - cycle next input
 done - close button
 done - fix bug, double context will double the items
+
 bug is updating buttons http://www.echoecho.com/htmlforms10.htm
 better css
-options page
-
-icon
-better readme.md
+readme.md
+done - icon
 analyics in store
 
 
+0.5 inistal
+0.6 close button
+0.7 icons
+0.8 button bug
 
 1.1
 some tidy
 publish
 test sync
 pull-we can remove the add completely
+options page
 
 
 fix iframe bug
@@ -75,6 +68,7 @@ looks wrong on stack overflow
 bug doesn't cycle back to start on tabs http://api.jquery.com/focusout/
 
 1.2
+set up chrome dev profile
 reload when source changes
 tidy
 sync 
