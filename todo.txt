@@ -1,5 +1,3 @@
-FTG
-
 Is a companion for chromes autofill, it is not intended to be a replacement. The idea is to do the bits that autofill can't
 
 How to use, right click a context menu, 
@@ -10,18 +8,10 @@ uses event pages, so doesn't take up memory
 syncs between computers
 
 
-things todo before v0.5 (personal test)
-
-done - choose name
-done - look into sync
-done - simple css
-
-things todo before v0.9 (share dev)
-
-start updating version log
-
-css
-done.. remove test angular
+0.5 initial
+0.6 close button
+0.7 icons
+0.8 button bug
 
 things todo before v1
 
@@ -34,26 +24,20 @@ done - copy to field
 done - cycle next input
 done - close button
 done - fix bug, double context will double the items
-
-bug is updating buttons http://www.echoecho.com/htmlforms10.htm
-better css
-readme.md
+done - remove test angular
+done - bug is updating buttons http://www.echoecho.com/htmlforms10.htm
 done - icon
+
+better css add button
+readme.md
 analyics in store
+better blurb
+screenshot
 
-
-0.5 inistal
-0.6 close button
-0.7 icons
-0.8 button bug
-
-1.1
+1.1+
 some tidy
-publish
-test sync
 pull-we can remove the add completely
 options page
-
 
 fix iframe bug
 http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
@@ -61,77 +45,31 @@ http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
 google search doesn't dissapear
 http://www.echoecho.com/htmlforms10.htm
 
-contenteditable
-
 looks wrong on stack overflow
-
 bug doesn't cycle back to start on tabs http://api.jquery.com/focusout/
 
-1.2
 set up chrome dev profile
 reload when source changes
-tidy
-sync 
-better edito
+tidy 
+better editor
 shortcut key
 move to custom elements to avoid css clashes
 nested css
 http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/
 shadow dom/ scope style not suppored
 move
-
-1.3
 bower intergration
 fix a couple of todos
 edit mode/ordering better css
 scroll bar
-
-
 fill button to grab fields
 jslint
 options page to autofill
-
-1.4
 tab ui/list rotation/accordian
 minify?
-context icon
-
-1.9+
 filter out $$hashkey saved data 
-
-http://docs.angularjs.org/api/angular.bootstrap
-http://stackoverflow.com/questions/16393302/apply-angular-js-to-new-dom-element-in-chrome-extension-content-script
-
-http://stackoverflow.com/questions/5643263/loading-html-into-page-element-chrome-extension
-
-http://stackoverflow.com/questions/16334054/inject-html-into-a-page-from-a-content-script
-
-
-angular migth not work
-	only one per app
-	needs to be boot stapped, i.e should be done after page load
-	http://stackoverflow.com/questions/16342603/how-to-run-two-separate-angular-js-apps-in-the-same-page
-http://docs.angularjs.org/api/ng.directive:ngApp
-
-research
- handlebars (no updating) http://handlebarsjs.com/
- mostache
-
-backbone
-knockout
-
-return html to page
-cloud
-
 learn sublime better
-
-next steps
-get data from extention
-
-do this, with extesion backend
-http://angularjs.org/
-
-also need test form copy
+contenteditable
 
 
 css
@@ -148,10 +86,6 @@ https://github.com/daneden/animate.css
 
 
 
-yeoman
-bower
-
-
 simple-server public 3000
 
 make everything a web component so we don't leak css...javascript?
@@ -162,8 +96,8 @@ http://www.infoq.com/news/2012/11/Testacular
 
 css issues
 
-
 ideas
+markdown [ccard]8988 7998 798 9989 
 mark an item as piece.. eg credcard, can be put in 4 or one lot
 needs a skip button
 bugs
