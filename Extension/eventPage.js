@@ -1,21 +1,8 @@
-
-
-
-
-
 console.log("loading");
 
-
-chrome.storage.local.set({fieldList: ["tim","rules","potatoes"]});
-//todo only if null
-//todo remove
-//chrome.storage.local.set({ todoList: [{text: 'larssssssn ang',done:false},{text:'blah',done:false}]});
-
-
-
-  chrome.contextMenus.create(
+chrome.contextMenus.create(
 {
-	"title": "Show Fill",
+  "title": "Fill This Gap",
   "type":"normal",
   "id": "show",
   "contexts":["editable"]
@@ -39,11 +26,4 @@ function onContextClickHandler(info, tab) {
 
 }
 
-// todo
-function executeScripts(array)
-{
-
-
-}
-
- chrome.contextMenus.onClicked.addListener(onContextClickHandler); 
+chrome.contextMenus.onClicked.addListener(onContextClickHandler); 

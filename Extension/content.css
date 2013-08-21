@@ -85,7 +85,7 @@ clear: both;
   float: left;
   width: 80%;
   padding: 5px;
- 
+ cursor: pointer;
   /*-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
   -o-transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -104,6 +104,7 @@ clear: both;
  margin-top: 6px;/*alighn of X */
   float: right;
   width: 10%;
+  cursor: pointer;
   /*display: none;
 */
 }
