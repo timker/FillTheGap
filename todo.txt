@@ -1,7 +1,3 @@
-Is a companion for chromes autofill, it is not intended to be a replacement. The idea is to do the bits that autofill can't
-
-How to use, right click a context menu, 
-right click
 
 one click update of text fields
 uses event pages, so doesn't take up memory
@@ -27,11 +23,12 @@ done - fix bug, double context will double the items
 done - remove test angular
 done - bug is updating buttons http://www.echoecho.com/htmlforms10.htm
 done - icon
+done - better blurb
 
 better css add button
 readme.md
+
 analyics in store
-better blurb
 screenshot
 
 1.1+
