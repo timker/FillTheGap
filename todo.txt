@@ -2,12 +2,8 @@
 one click update of text fields
 uses event pages, so doesn't take up memory
 syncs between computers
+no dodgy permissions required
 
-
-0.5 initial
-0.6 close button
-0.7 icons
-0.8 button bug
 
 things todo before v1
 
@@ -36,13 +32,24 @@ done - analyics in store
 done - screenshot
 
 1.1
-poc bower/grunt
-initial polymr
+done - basic bower/grunt/ yeoman research
+done - poc bower/grunt
+
+done - install polymer
 clean branches
 
+add a feature 
 
 1.1+
-bower/grunt
+where possible move to yeomap style structure
+Create a simple build grunt build
+grunt build version
+grunt icon/name(something to tell dev/prod) 
+bug - we need a specific build to not take all the bower references
+get the debug attribute working for testing (polymer)
+
+learn how to use polymer sourcemaps
+
 research testing
 clean
 reduce content script injection
@@ -55,15 +62,14 @@ named items support
 
 readme.md
 
-fix brachning issues
+done - fix brachning issues
 low priority bug... new iframes created after init
 low priority bug... nested iframes
 low priority bug... loading ftg twice doubles the events
 
 
 
-fix iframe bug
-http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
+done - fix iframe bug http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
 
 google search doesn't dissapear
 http://www.echoecho.com/htmlforms10.htm
