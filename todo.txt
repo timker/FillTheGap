@@ -25,29 +25,42 @@ done - bug is updating buttons http://www.echoecho.com/htmlforms10.htm
 done - icon
 done - better blurb
 
-better css add button
-readme.md
-
-1.iframe
-next
-clean
-initial track
-load order (help with initial clean)
-split into shared files (next,internal trackactive both can be one file)
-fix brachning issues
-low priority bug... new iframes created after init
-low priority bug... nested iframes
-low priority bug... loading ftg twice doubles the events
+1.0
+done - iframe support
+iframe
+done - next
+done - initial track
+done - load order (help with initial clean)
+done - split into shared files (next,internal trackactive both can be one file)
 done - analyics in store
 done - screenshot
+
+1.1
+poc bower/grunt
+initial polymr
+clean branches
 
 
 1.1+
 bower/grunt
-
+research testing
+clean
+reduce content script injection
 pull-we can remove the add completely
 options page
 edit item
+better css add button
+input =password support
+named items support
+
+readme.md
+
+fix brachning issues
+low priority bug... new iframes created after init
+low priority bug... nested iframes
+low priority bug... loading ftg twice doubles the events
+
+
 
 fix iframe bug
 http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
