@@ -28,10 +28,12 @@ done - better blurb
 better css add button
 readme.md
 
-analyics in store
-screenshot
+done - analyics in store
+done - screenshot
 
 1.1+
+bower/grunt
+
 some tidy
 pull-we can remove the add completely
 options page
