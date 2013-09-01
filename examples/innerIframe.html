@@ -1,0 +1,53 @@
+<script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+	
+<script type="text/javascript">
+function checkFocus() {
+	console.log(document.activeElement.tagName);
+  if(document.activeElement == document.getElementsByTagName("iframe")[0]) {
+    console.log('iframe has focus');
+  } else {
+    console.log('iframe not focused');
+  }
+}
+//window.setInterval(checkFocus, 1000); 
+
+
+var focusTracer = (function() {
+  var currentValidFocus;
+  //
+  init = function(){
+    //todo only if a input/iframe and not in AT_Manuel_Root 
+    currentValidFocus = document.activeElement;
+//document.activeElement.tagName
+    $(document).focusin(function(e) {
+      //console.log(this);
+      //console.log(e);
+      console.log("focusin:" + e.target.tagName);
+    console.log("ActiveDoc:" +document.activeElement.tagName)
+      
+
+     // $(this).find("span").css('display','inline').fadeOut(1000);
+    });
+    $(document).focusout(function(e) {
+     // console.log(this);
+     // console.log(e);
+     // console.log(e.target);
+    console.log("focusout:" + e.target.tagName);
+     console.log("ActiveD:" +document.activeElement.tagName)
+     // $(this).find("span").css('display','inline').fadeOut(1000);
+    });
+
+  };
+//*************diabled
+ // init();
+})();
+
+
+</script>
+<body>
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="button" value="test" />
+</body>

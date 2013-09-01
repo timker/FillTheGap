@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 1. Shim missing platform features -->
+    <script src="polymer.min.js"></script>
+    <!-- 2. Load a component -->
+<!--    <link rel="import" href="x-foo.html">-->
+  </head>
+  <body>
+
+
+<polymer-element name="tk-element">
+  <template>
+    <span>I'm <b>tk-element</b>. This is my Shadow DOM.</span>
+  </template>
+  <script>Polymer('tk-element');</script>
+</polymer-element>
+  <tk-element></tk-element>
+    <tk-element></tk-element>
+
+    <!-- 3. Declare the component by its tag. -->
+    <x-foo></x-foo>
+
+
+
+      <script>
+    window.addEventListener('WebComponentsReady', function() {
+      document.body.style.opacity = 1; // show body now that registration is done.
+
+      var xFoo = document.querySelector('x-foo');
+      // Do something with x-foo.
+    });
+  </script>
+  </body>
+</html>

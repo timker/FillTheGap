@@ -1,0 +1,33 @@
+<body>
+http://www.polymer-project.org/polymer.html
+https://github.com/polymer/CustomElements
+http://robdodson.me/blog/2013/03/19/custom-elements-intro/
+https://code.google.com/p/chromium/issues/detail?id=180965
+https://github.com/Polymer/TemplateBinding/issues/96
+https://github.com/mozilla/web-components
+document.webkitRegister
+
+https://github.com/toolkitchen/CustomElements
+
+<script>
+  var XFooProto = Object.create(HTMLInputElement.prototype);
+
+  // Define its JS API.
+  XFooProto.showVal = function() {
+    alert(this.value);
+  };
+
+  var XFoo = document.webkitRegister('x-foo', {prototype: XFooProto});
+
+  var xfoo = document.createElement('input', 'x-foo');
+  xfoo.value = 50;
+
+  xfoo.addEventListener('click', function(e) {
+    e.target.showVal();
+  });
+
+  document.body.appendChild(xfoo);   
+</script>
+<input is="x-foo">
+<x-foo></x-foo>
+</body>

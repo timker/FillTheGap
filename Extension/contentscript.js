@@ -31,12 +31,84 @@
 
 
 
+
+//this won't work if iframe is created after form filler... super minor bug, may need to reinject on iframe load
+var focusTracer = (function(focusNavigator) {
+  var currentValidFocus;
+
+  var frameSource = null;
+
+  function receiveMessage(event)  {
+    //alert("revice");
+    //would it be worth checking that active tab is an iframe here?
+        console.log(event);
+        currentValidFocus = null;
+        frameSource = event.source;
+        console.log("frameSource");
+        console.log(frameSource);
+        //we might be able to keep connection to origin frame
+        //https://developer.mozilla.org/en-US/docs/Web/API/window.postMessage
+  };
+  //
+  init = function(){
+    //todo only if a input/iframe and not in AT_Manuel_Root 
+    //content script is loaded only on input/contenteditable so this should be safe (as log as this loads fast)
+    currentValidFocus = document.activeElement;
+
+    window.addEventListener("message",receiveMessage , false);
+  
+    //document.activeElement.tagName
+    $(document).focusin(function(e) {
+      //console.log(this);
+      //console.log(e);
+      console.log("focusin:" + e.target.tagName);
+      console.log("ActiveDoc:" + document.activeElement.tagName);
+      
+      //why are we using activeElement instead of e.target?
+      currentValidFocus = document.activeElement;
+      frameSource = null;
+
+    });
+    $(document).focusout(function(e) {
+     // console.log(this);
+     // console.log(e);
+     // console.log(e.target);
+      console.log("focusout:" + e.target.tagName);
+      console.log("ActiveD:" + document.activeElement.tagName)
+     // $(this).find("span").css('display','inline').fadeOut(1000);
+    });
+
+  };
+
+  init();
+
+return {
+    setValue: function (value) {
+      if(frameSource)
+      {
+        //don't pass iframeActive
+        frameSource.postMessage({setValue:value},"*");
+      }
+      else{
+       
+        $(currentValidFocus).val(value);
+        focusNavigator.next(currentValidFocus);
+      }
+     // nextItem();
+    }
+  };
+
+})(focusNavigator);
+
+
+
+// todo obsolete :remove
 var pageAccessor = (function () {
   var lastElementFocused;
   
   init = function() {
     // todo this needs to be "live or on"
-    // todo does not seem to cycle through ne elements
+    // todo does not seem to cycle through new elements
     $("*").on('blur', function(args) {
       //$( "*" ).blur(function(args) {
       // console.log("lost focus");
@@ -82,8 +154,6 @@ var pageAccessor = (function () {
 
 
 
-
-
 function FillCtrl($scope)
 {
   var loadData = function()
@@ -118,7 +188,9 @@ function FillCtrl($scope)
 
   $scope.ApplyItemToTextField = function(item)
   {
-    pageAccessor.setValue(item.text);
+    console.log(document.activeElement.tagName);
+    //pageAccessor.setValue(item.text);
+    focusTracer.setValue(item.text);
   }
 
 

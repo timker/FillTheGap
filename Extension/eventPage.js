@@ -14,10 +14,15 @@ function onContextClickHandler(info, tab) {
 	
 // maybe this should be have a call back
 	chrome.tabs.insertCSS(null, { file: "content.css" });
-	chrome.tabs.executeScript(null, { file: "Scripts/jquery-2.0.3.js" }, function() {
-		console.log("jqueryloaded");
-		chrome.tabs.executeScript(null, { file: "Scripts/angular.js" }, function() {
-			chrome.tabs.executeScript(tab.tabId, {file: "contentscript.js"});
+	// todo don't inject jquery into every frame
+	chrome.tabs.executeScript(null, { file: "Scripts/jquery-2.0.3.js", allFrames : true }, function() {
+		chrome.tabs.executeScript(null, { file: "sharedContent.js" , allFrames : true }, function() {
+			chrome.tabs.executeScript(null, { file: "Scripts/angular.js" }, function() {
+				chrome.tabs.executeScript(tab.tabId, {file: "contentscript.js"}, function(){
+					chrome.tabs.executeScript(tab.tabId, {file: "iframeContentScript.js",allFrames :true});	
+				});
+			
+			});
 		});
 	});
 		

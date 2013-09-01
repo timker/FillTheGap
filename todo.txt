@@ -28,15 +28,26 @@ done - better blurb
 better css add button
 readme.md
 
+1.iframe
+next
+clean
+initial track
+load order (help with initial clean)
+split into shared files (next,internal trackactive both can be one file)
+fix brachning issues
+low priority bug... new iframes created after init
+low priority bug... nested iframes
+low priority bug... loading ftg twice doubles the events
 done - analyics in store
 done - screenshot
+
 
 1.1+
 bower/grunt
 
-some tidy
 pull-we can remove the add completely
 options page
+edit item
 
 fix iframe bug
 http://www.w3schools.com/html/tryit.asp?filename=tryhtml_checkbox
@@ -47,6 +58,7 @@ http://www.echoecho.com/htmlforms10.htm
 looks wrong on stack overflow
 bug doesn't cycle back to start on tabs http://api.jquery.com/focusout/
 
+combine script files
 set up chrome dev profile
 reload when source changes
 tidy 
