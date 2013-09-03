@@ -8,27 +8,41 @@ chrome.contextMenus.create(
   "contexts":["editable"]
 });
 
-function onContextClickHandler(info, tab) {
-//	chrome.tabs.executeScript(null, {file: "content_script.js"});
-	console.log("clicked");
-	
-// maybe this should be have a call back
-	chrome.tabs.insertCSS(null, { file: "content.css" });
-	// todo don't inject jquery into every frame
-	chrome.tabs.executeScript(null, { file: "Scripts/jquery-2.0.3.js", allFrames : true }, function() {
-		chrome.tabs.executeScript(null, { file: "sharedContent.js" , allFrames : true }, function() {
-			chrome.tabs.executeScript(null, { file: "Scripts/angular.js" }, function() {
-				chrome.tabs.executeScript(tab.tabId, {file: "contentscript.js"}, function(){
-					chrome.tabs.executeScript(tab.tabId, {file: "iframeContentScript.js",allFrames :true});	
-				});
-			
-			});
-		});
-	});
-		
-//chrome.tabs.executeScript(tab.tabId, {file: "contentscript.js"});
-//hrome.tabs.executeScript(null, { file: "content.js" });
 
+function onContextClickHandler(info, tab) {
+
+	console.log("clickedin");
+	console.log(tab.id);
+
+	console.time("InjectAll");
+	console.time("InjectCss");
+	chrome.tabs.insertCSS(tab.id, { file: "content.css" });
+	console.timeEnd("InjectCss");
+	// todo don't inject jquery into every frame
+	console.time("InjectJ");
+	chrome.tabs.executeScript(tab.id, { file: "Scripts/jquery-2.0.3.js", allFrames : true }, function() {
+		console.timeEnd("InjectJ");
+		console.time("InjectShared");
+		chrome.tabs.executeScript(tab.id, { file: "sharedContent.js" , allFrames : true }, function() {
+			console.timeEnd("InjectShared");
+			//console.time("InjectPoly");
+			//chrome.tabs.executeScript(tab.id, { file: "bower_components/polymer/polymer.min.js" }, function() {
+			//console.timeEnd("InjectPoly");
+				console.time("InjectAnj");
+				chrome.tabs.executeScript(tab.id, { file: "Scripts/angular.js" }, function() {
+					console.timeEnd("InjectAnj");
+					console.time("InjectCS");
+
+					chrome.tabs.executeScript(tab.id, {file: "contentscript.js"}, function(){
+					console.timeEnd("InjectCS");
+
+						chrome.tabs.executeScript(tab.id, {file: "iframeContentScript.js",allFrames :true},function(){console.timeEnd("InjectAll");});	
+					});
+			
+				});
+			//});
+		});
+	});		
 }
 
 chrome.contextMenus.onClicked.addListener(onContextClickHandler); 
