@@ -1,20 +1,21 @@
 module.exports = function(grunt) {
 
-//  var yeomanConfig = {
- //       app: 'app',
-  //      dist: 'dist'
-  //  };
+ var customFtgConfig = {
+        app: 'Extension',
+        dist: 'dist'
+    };
 
 // should i use load or require
     require('time-grunt')(grunt);
 	grunt.loadNpmTasks('grunt-contrib-copy');
- grunt.loadNpmTasks('grunt-contrib-clean');
+ 	grunt.loadNpmTasks('grunt-contrib-clean');
+ 	grunt.loadNpmTasks('grunt-chrome-manifest');
  //todo
 //add version
 //add zip
 
 	grunt.initConfig({
-
+FtgConfig:customFtgConfig,
 		clean: ["dist"],
 		copy: {
 		  main: {
@@ -25,7 +26,18 @@ module.exports = function(grunt) {
 		      {expand: true, flatten: true, src: ['Extension/**'], dest: 'dist/', filter: 'isFile'} // flattens results to a single level
 		    ]
 		  }
-		}
+		},chromeManifest: {
+  dist: {
+    options: {
+      buildnumber: true,
+      background: {
+        target: 'eventPage.js'
+      }
+    },
+    src: 'Extension',
+    dest: 'dist'
+  }
+}
 
  	});
 
@@ -34,9 +46,9 @@ module.exports = function(grunt) {
     grunt.log.write('Logging some stuff...').ok();
   });
 
+//grunt.registerTask('trial', ["chromeManifest:dist"]);
 
-
-grunt.registerTask('default', ["logit","clean","copy"]);
+grunt.registerTask('default', ["logit","clean","copy","chromeManifest:dist"]);
 
 
 
