@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   //      dist: 'dist'
   //  };
 
+// should i use load or require
     require('time-grunt')(grunt);
 	grunt.loadNpmTasks('grunt-contrib-copy');
  grunt.loadNpmTasks('grunt-contrib-clean');
