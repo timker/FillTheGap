@@ -5,14 +5,18 @@ module.exports = function(grunt) {
         dist: 'dist'
     };
 
+
+// todo
+//use customFTGconfig
+//format file
+// remove thumbs db
+
 // should i use load or require
     require('time-grunt')(grunt);
 	grunt.loadNpmTasks('grunt-contrib-copy');
  	grunt.loadNpmTasks('grunt-contrib-clean');
  	grunt.loadNpmTasks('grunt-chrome-manifest');
- //todo
-//add version
-//add zip
+	grunt.loadNpmTasks('grunt-contrib-compress');
 
 	grunt.initConfig({
 FtgConfig:customFtgConfig,
@@ -37,7 +41,30 @@ FtgConfig:customFtgConfig,
     src: 'Extension',
     dest: 'dist'
   }
-}
+   
+
+
+
+},
+
+
+
+compress: {
+            dist: {
+                options: {
+                    archive: 'package/FillTheGap.zip'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'dist/',
+                    src: ['**'],
+                    dest: ''
+                }]
+            }
+        }
+
+
+
 
  	});
 
@@ -46,9 +73,12 @@ FtgConfig:customFtgConfig,
     grunt.log.write('Logging some stuff...').ok();
   });
 
-//grunt.registerTask('trial', ["chromeManifest:dist"]);
+grunt.registerTask('trial', ["compress:dist"]);
 
-grunt.registerTask('default', ["logit","clean","copy","chromeManifest:dist"]);
+// quick
+// full manifest/zip
+
+grunt.registerTask('default', ["logit","clean","copy","chromeManifest:dist","compress:dist"]);
 
 
 
