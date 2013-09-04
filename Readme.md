@@ -2,6 +2,8 @@ Fill the Gap
 
 Is intended to be used where Chrome Autofill does not work.
 
+### Build
+npm install
 Build: none, just download and "Load unpacked Extension" to the "Extension\" folder.
 
 

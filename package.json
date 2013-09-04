@@ -1,5 +1,5 @@
 {
-  "name": "Fill The Gap",
+  "name": "FillTheGap",
   "version": "0.0.1",
   "description": "Readme.md",
   "main": "testpage.html",
@@ -16,6 +16,7 @@
     "url": "https://github.com/timker/ManuelFiller/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1"
   }
 }
