@@ -164,3 +164,4 @@ pip-log.txt
 
 #Tims
 #Extension/bower_components
+node_modules/*

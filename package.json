@@ -1,5 +1,5 @@
 {
-  "name": "ManuelFiller",
+  "name": "Fill The Gap",
   "version": "0.0.1",
   "description": "Readme.md",
   "main": "testpage.html",
@@ -14,5 +14,8 @@
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/timker/ManuelFiller/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
   }
 }
