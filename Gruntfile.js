@@ -24,10 +24,10 @@ FtgConfig:customFtgConfig,
 		copy: {
 		  main: {
 		    files: [
-		      {src: ['Extension/*'], dest: 'dist/', filter: 'isFile'}, // includes files in path
-		      {src: ['Extension/**'], dest: 'dist/'}, // includes files in path and its subdirs
+		    //  {src: ['Extension/*'], dest: 'dist/', filter: 'isFile'}, // includes files in path
+		    //  {src: ['Extension/**'], dest: 'dist/'}, // includes files in path and its subdirs
 		      {expand: true, cwd: 'Extension/', src: ['**'], dest: 'dist/'}, // makes all src relative to cwd
-		      {expand: true, flatten: true, src: ['Extension/**'], dest: 'dist/', filter: 'isFile'} // flattens results to a single level
+		     // {expand: true, flatten: true, src: ['Extension/**'], dest: 'dist/', filter: 'isFile'} // flattens results to a single level
 		    ]
 		  }
 		},chromeManifest: {
