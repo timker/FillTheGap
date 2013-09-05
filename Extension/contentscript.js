@@ -31,7 +31,7 @@
 
 
 
-
+console.log(focusNavigator);
 //this won't work if iframe is created after form filler... super minor bug, may need to reinject on iframe load
 var focusTracer = (function(focusNavigator) {
   var currentValidFocus;
@@ -101,54 +101,6 @@ return {
 })(focusNavigator);
 
 
-
-// todo obsolete :remove
-var pageAccessor = (function () {
-  var lastElementFocused;
-  
-  init = function() {
-    // todo this needs to be "live or on"
-    // todo does not seem to cycle through new elements
-    $("*").on('blur', function(args) {
-      //$( "*" ).blur(function(args) {
-      // console.log("lost focus");
-      lastElementFocused = args.currentTarget;
-    });
-
-  };
-
-  nextItem = function(){
-    //should onlt be txt inputs,textarea
-    var allInputs = $("input[type='text']");
-    console.log(allInputs);
-    for (var i = 0; i < allInputs.length; i++) {
-      if (allInputs[i] == lastElementFocused) {
-        // todo I think this might be for checkboxes
-        // while ((allInputs[i]).name == (allInputs[i + 1]).name) {
-        //    i++;
-        // }
-        console.log("found");
-        console.log(i + 1);
-        console.log(allInputs.length);
-        if ((i + 1) < allInputs.length) {
-           $(allInputs[i + 1]).focus();
-        } else {
-           $(allInputs[0]).focus();
-        }
-      }
-    }
-  };
-
-  init();
-
-  return {
-    setValue: function (value) {
-      $(lastElementFocused).val(value);
-      nextItem();
-    },
-  };
-
-})();
 
 
 

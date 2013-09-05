@@ -8,8 +8,9 @@ var focusNavigator = (function() {
   //todo rename lastElementFocused to focusableElement
   nextItem = function(lastElementFocused){
     //should onlt be txt inputs,textarea
-    var allInputs = $("input[type='text']");
+    var allInputs = $("input[type='text'],input[type='password']");
     console.log(allInputs);
+    console.log(lastElementFocused);
     for (var i = 0; i < allInputs.length; i++) {
       if (allInputs[i] == lastElementFocused) {
         // todo I think this might be for checkboxes
