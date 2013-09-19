@@ -7,7 +7,12 @@ h2 {
   margin: 0;
   padding: 0;
 }
-
+ 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 </style>
 <div>
      <header>
@@ -17,8 +22,11 @@ h2 {
      <!-- <div>edit</div>-->
     </header>
     <div>
-      <content select="inner"></content>
-      <content select="myclose"></content>
+      <ul>
+        <content select="inner"></content>
+      </ul>
+      <content select="addItem"></content>
+      <content select="close"></content>
     </div>
 </div>
 </template>
@@ -26,27 +34,22 @@ h2 {
 
   <ftg id="AT_Manuel_Root" class="manuel-dock" ng-controller="FillCtrl" ng-app>
     <inner>
-      
-
-        <ul>
           <li class="fillItemContainer" ng-repeat="item in fillList">
           <div>
             <a class="fillItem"    ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
             <a class="fillItemDelete" ng-click="deleteItem(item)">✖</a>
           </div>
           </li>
-        </ul>
-
-        <form ng-submit="addItem()">
-          <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
-          <input class="btn-primary" type="submit" value="add">
-        </form>
-        <div class="close" ng-click="close()"></div>
-      
-
       <footer>
       </footer>
     </inner>
+    <addItem>
+    <form ng-submit="addItem()">
+          <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
+          <input class="btn-primary" type="submit" value="add">
+        </form>
+   
+    </addItem>
     <close>
       <div class="close" ng-click="close()"></div>
     </close>
