@@ -1,37 +1,67 @@
-<div>
 
-  <div id="AT_Manuel_Root" class="manuel-dock" ng-app>
-    <header>
+<template id="ftgtemplate">
+<style>
+ 
+h2 {
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+</style>
+<div>
+     <header>
       <h2>
         F T G
       </h2>
      <!-- <div>edit</div>-->
     </header>
-
-    <div ng-controller="FillCtrl">
-
-      <ul>
-        <li class="fillItemContainer" ng-repeat="item in fillList">
-        <div>
-          <a class="fillItem"    ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
-          <a class="fillItemDelete" ng-click="deleteItem(item)">✖</a>
-          <div>
-        </li>
-      </ul>
-
-      <form ng-submit="addItem()">
-        <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
-
-     <!-- <div alt="to be done">pull/pullall</div>
-      <div class="triangle" ng-click="close()">Close</div>
--->
-<div class="close" ng-click="close()"></div>
+    <div>
+      <content select="inner"></content>
+      <content select="myclose"></content>
     </div>
-
-    <footer>
-    </footer>
-  </div>
-
 </div>
+</template>
+
+
+  <ftg id="AT_Manuel_Root" class="manuel-dock" ng-controller="FillCtrl" ng-app>
+    <inner>
+      
+
+        <ul>
+          <li class="fillItemContainer" ng-repeat="item in fillList">
+          <div>
+            <a class="fillItem"    ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
+            <a class="fillItemDelete" ng-click="deleteItem(item)">✖</a>
+          </div>
+          </li>
+        </ul>
+
+        <form ng-submit="addItem()">
+          <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
+          <input class="btn-primary" type="submit" value="add">
+        </form>
+        <div class="close" ng-click="close()"></div>
+      
+
+      <footer>
+      </footer>
+    </inner>
+    <close>
+      <div class="close" ng-click="close()"></div>
+    </close>
+  </div>
+</ftg>
+
+
+<script type="text/javascript">
+//load
+
+//ftg wrapper
+var shadow = document.querySelector('#AT_Manuel_Root').webkitCreateShadowRoot();
+var template = document.querySelector('#ftgtemplate');
+shadow.appendChild(template.content);
+
+
+
+</script>
