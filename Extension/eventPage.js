@@ -25,6 +25,12 @@ function onContextClickHandler(info, tab) {
 		console.time("InjectShared");
 		chrome.tabs.executeScript(tab.id, { file: "sharedContent.js" , allFrames : true }, function() {
 			console.timeEnd("InjectShared");
+			console.time("InjectHandle");
+			chrome.tabs.executeScript(tab.id, { file: "bower_components/handlebars/handlebars.runtime.js" }, function() {
+			console.timeEnd("InjectHandle");
+			console.time("InjectDust");
+			chrome.tabs.executeScript(tab.id, { file: "bower_components/dustjs-linkedin/lib/dust.js" }, function() {
+			console.timeEnd("InjectDust");
 			//console.time("InjectPoly");
 			//chrome.tabs.executeScript(tab.id, { file: "bower_components/polymer/polymer.min.js" }, function() {
 			//console.timeEnd("InjectPoly");
@@ -41,6 +47,8 @@ function onContextClickHandler(info, tab) {
 			
 				});
 			//});
+			});
+			});
 		});
 	});		
 }
