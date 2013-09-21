@@ -21,11 +21,20 @@
         // this might still work if we convert to element first, instead of text?
         // $($.parseHTML(data)).appendTo('body');
 
-        var first = document.getElementById('AT_Manuel_Root');
-        angular.element(first).ready(function() {
+       // var first = document.getElementById('AT_Manuel_Root');
+       // angular.element(first).ready(function() {
           //  console.log(first);
-          angular.bootstrap(first);
-        });
+       //   angular.bootstrap(first);
+       // });
+
+
+    //ftg wrapper
+var shadow = document.querySelector('#AT_Manuel_Root').webkitCreateShadowRoot();
+var template = document.querySelector('#ftgtemplate');
+shadow.appendChild(template.content);
+
+fillController.renderList();
+//fillCtrl
     });
 })();
 
@@ -102,7 +111,34 @@ return {
 
 
 
+var fillController = (function ()
+{
 
+ var template ="{#.}<li class='fillItemContainer' >          <div><a class='fillItem'>{text}</a>            <a class='fillItemDelete'>✖</a>         </div>          </li>{/.}";
+var compiled = dust.compile(template, "list");
+dust.loadSource(compiled);
+
+  return {
+    renderList: function () {
+     console.log("zap");
+
+  chrome.storage.sync.get('fillList', function(data) {
+        console.log(data);
+       dust.render("list", data.fillList, function(err, out) {
+$('ftg inner').append($.parseHTML(out));
+  console.log(out);
+});
+    });
+
+ 
+   
+
+//
+
+    },
+  };
+
+})();
 
 
 

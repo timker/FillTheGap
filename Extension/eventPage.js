@@ -29,7 +29,7 @@ function onContextClickHandler(info, tab) {
 			chrome.tabs.executeScript(tab.id, { file: "bower_components/handlebars/handlebars.runtime.js" }, function() {
 			console.timeEnd("InjectHandle");
 			console.time("InjectDust");
-			chrome.tabs.executeScript(tab.id, { file: "bower_components/dustjs-linkedin/lib/dust.js" }, function() {
+			chrome.tabs.executeScript(tab.id, { file: "bower_components/dustjs-linkedin/dist/dust-full-2.0.0.min.js" }, function() {
 			console.timeEnd("InjectDust");
 			//console.time("InjectPoly");
 			//chrome.tabs.executeScript(tab.id, { file: "bower_components/polymer/polymer.min.js" }, function() {

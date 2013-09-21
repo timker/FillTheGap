@@ -52,14 +52,8 @@ ul {
 
   <ftg id="AT_Manuel_Root" class="manuel-dock" ng-controller="FillCtrl" ng-app>
     <inner>
-          <li class="fillItemContainer" ng-repeat="item in fillList">
-          <div>
-            <a class="fillItem"    ng-click="ApplyItemToTextField(item)">{{item.text}}</a>
-            <a class="fillItemDelete" ng-click="deleteItem(item)">✖</a>
-          </div>
-          </li>
-      <footer>
-      </footer>
+     
+      
     </inner>
     <addItem>
     <form ng-submit="addItem()">
@@ -77,11 +71,6 @@ ul {
 
 <script type="text/javascript">
 //load
-
-//ftg wrapper
-var shadow = document.querySelector('#AT_Manuel_Root').webkitCreateShadowRoot();
-var template = document.querySelector('#ftgtemplate');
-shadow.appendChild(template.content);
 
 
 
