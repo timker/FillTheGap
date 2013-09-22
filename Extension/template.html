@@ -54,9 +54,9 @@ ul {
     <inner>    
     </inner>
     <addItem>
-      <form ng-submit="addItem()">
-        <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
-        <input class="btn-primary add" type="button" value="add">
+      <form id="addform">
+        <input type="text" id="addText" size="30" placeholder="add new item here">
+        <input class="btn-primary add" type="submit" value="add">
       </form>
     </addItem>
     <close>

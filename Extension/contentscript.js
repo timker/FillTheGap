@@ -115,62 +115,74 @@ return {
 
 var fillController = (function ()
 {
+  var fillList;
 
-
-function close()
-{
-  // change to root
-
-  $('ftg').remove();
-}
-
-function add()
-{
-    alert("ggg");
-  // change to root
- // $('ftg').remove();
-}
-
-
-function init() {
-
-
-      var template ="{#.}<li class='fillItemContainer' ><div><a class='fillItem'>{text}</a><a class='fillItemDelete'>✖</a>         </div>          </li>{/.}";
-      var compiled = dust.compile(template, "list");
-      dust.loadSource(compiled);
-
-console.log($("ftg .close").length);
+  function close()
+  {
+    $('ftg').remove();
   }
 
+  function add(event)
+  {
+    event.preventDefault();
+    var addText = $("#addText").val();
+    $("#addText").val("");
 
+    fillList.push({text:addText});
 
+    persist();
+    renderList();
+  }
 
-function renderList()
+function getItemId(element)
 {
-  chrome.storage.sync.get('fillList', function(data) {
-        console.log(data);
-        dust.render("list", data.fillList, function(err, out) {
-          $('ftg inner').append($.parseHTML(out));
-          console.log(out);
-// test();
-        });
+var index = $(element).closest("#fillItemContainer").data("data-index");
+console.log(index);
+
+}
+function applyItemToTextField()
+{
+alert('d');
+
+}
+
+  var persist = function(){
+    console.log(fillList);
+    chrome.storage.sync.set({ fillList: fillList});
+  }
+
+  function init() {
+    var template ="{#fillList}<li  data-index='{$idx}' class='fillItemContainer' ><div><a class='fillItem'>({$idx}){text} {@idx}{.}{/idx} </a><a class='fillItemDelete'>✖</a>         </div>          </li>{/fillList}";
+    var compiled = dust.compile(template, "list");
+    dust.loadSource(compiled);
+
+    console.log($("ftg .close").length);
+  }
+
+  function renderList()
+  {
+    chrome.storage.sync.get('fillList', function(data) {
+      fillList = data;
+      console.log(data);
+      dust.render("list", fillList, function(err, out) {
+        $('ftg inner').empty();
+        $('ftg inner').append($.parseHTML(out));
+        console.log(out);
       });
-}
+    });
+  }
 
-function setup()
-{
+  function setup()
+  {
+    renderList();
+    $("ftg .close").click(close);
+    $("ftg form").submit(add);
+    $("ftg").on("click", "li .fillItem",applyItemToTextField);
+  }
 
-renderList();
-  $("ftg .close").click(close);
-  $("ftg .add").click(add);
-}
-
-init();
+  init();
 
   return {
-    //renderList: function () {
-    //  renderList();
-    //},
     setup: function () {
       setup();
     },
