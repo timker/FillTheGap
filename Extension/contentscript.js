@@ -28,6 +28,7 @@
        // });
 
 
+// todo move into controller so we can remove setup method
     //ftg wrapper
 var shadow = document.querySelector('#AT_Manuel_Root').webkitCreateShadowRoot();
 var template = document.querySelector('#ftgtemplate');
@@ -35,8 +36,6 @@ shadow.appendChild(template.content);
 
 //possible race condition
 fillController.setup();
-//fillController.renderList();
-//fillCtrl
     });
 })();
 
@@ -128,31 +127,45 @@ var fillController = (function ()
     var addText = $("#addText").val();
     $("#addText").val("");
 
-    fillList.push({text:addText});
+    // todo fix this double filllist bs
+    fillList.fillList.push({text:addText});
 
     persist();
     renderList();
   }
 
-function getItemId(element)
-{
-var index = $(element).closest("#fillItemContainer").data("data-index");
-console.log(index);
+  function deleteItem(event)
+  {
+    var index = getItemId(event.target);
+    if (index != -1) {
+      fillList.fillList.splice(index, 1);    
+      persist();
+      renderList();
+    }
+  }
 
-}
-function applyItemToTextField()
-{
-alert('d');
+  function getItemId(element)
+  {
+    var index =  $(element).closest(".fillItemContainer").data("index")
+    return index;
+  }
 
+function applyItemToTextField(event)
+{
+  //debugger;
+  console.log(event);
+  var id = getItemId(event.target);
+    focusTracer.setValue(fillList.fillList[id].text);
 }
 
   var persist = function(){
     console.log(fillList);
-    chrome.storage.sync.set({ fillList: fillList});
+    chrome.storage.sync.set({ fillList: fillList.fillList});
   }
 
   function init() {
-    var template ="{#fillList}<li  data-index='{$idx}' class='fillItemContainer' ><div><a class='fillItem'>({$idx}){text} {@idx}{.}{/idx} </a><a class='fillItemDelete'>✖</a>         </div>          </li>{/fillList}";
+    //todo move templating to compile
+    var template ="{#fillList}<li  data-index='{$idx}' class='fillItemContainer' ><div><a class='fillItem'>({$idx}){text} {@idx}{.}{/idx} </a><a class='fillItemDelete'>✖</a> </div></li>{/fillList}";
     var compiled = dust.compile(template, "list");
     dust.loadSource(compiled);
 
@@ -177,7 +190,8 @@ alert('d');
     renderList();
     $("ftg .close").click(close);
     $("ftg form").submit(add);
-    $("ftg").on("click", "li .fillItem",applyItemToTextField);
+    $("ftg").on("click", "li .fillItem", applyItemToTextField);
+    $("ftg").on("click", "li .fillItemDelete", deleteItem);
   }
 
   init();
@@ -190,51 +204,3 @@ alert('d');
 
 })();
 
-
-
-function FillCtrl($scope)
-{
-  var loadData = function()
-  {
-    chrome.storage.sync.get('fillList', function(data) {
-        console.log(data);
-        $scope.fillList = data.fillList || [];
-        $scope.$apply();
-    });
-  }
-
-  $scope.addItem = function()
-  {
-    console.log($scope.newItemText);
-    $scope.fillList.push({text:$scope.newItemText})
-    console.log($scope.fillList);
-    console.log({text:$scope.newItemText});
-    $scope.newItemText = "";
-
-    persist();
-  }
-
-  $scope.deleteItem = function(item)
-  {
-    console.log(item);
-    var index = $scope.fillList.indexOf(item);
-    if (index != -1) {
-      $scope.fillList.splice(index, 1);    
-      persist();
-    }
-  }
-
-  $scope.ApplyItemToTextField = function(item)
-  {
-    console.log(document.activeElement.tagName);
-    //pageAccessor.setValue(item.text);
-    focusTracer.setValue(item.text);
-  }
-
-var persist = function(){
-  chrome.storage.sync.set({ fillList: $scope.fillList});
-  chrome.storage.sync.getBytesInUse(null, function(ints){console.log(ints)})
-}
-
-  loadData();
-}
