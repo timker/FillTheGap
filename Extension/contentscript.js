@@ -2,7 +2,7 @@
 
  (function() {
 
-    $('#AT_Manuel_Root').remove();
+    $('ftg').remove();
      // this is to disable double loading
      // this could be used for a "close" button
      // if(document.getElementById('AT.Manuel.Root'))
@@ -33,7 +33,9 @@ var shadow = document.querySelector('#AT_Manuel_Root').webkitCreateShadowRoot();
 var template = document.querySelector('#ftgtemplate');
 shadow.appendChild(template.content);
 
-fillController.renderList();
+//possible race condition
+fillController.setup();
+//fillController.renderList();
 //fillCtrl
     });
 })();
@@ -114,27 +116,63 @@ return {
 var fillController = (function ()
 {
 
- var template ="{#.}<li class='fillItemContainer' >          <div><a class='fillItem'>{text}</a>            <a class='fillItemDelete'>✖</a>         </div>          </li>{/.}";
-var compiled = dust.compile(template, "list");
-dust.loadSource(compiled);
 
-  return {
-    renderList: function () {
-     console.log("zap");
+function close()
+{
+  // change to root
 
+  $('ftg').remove();
+}
+
+function add()
+{
+    alert("ggg");
+  // change to root
+ // $('ftg').remove();
+}
+
+
+function init() {
+
+
+      var template ="{#.}<li class='fillItemContainer' ><div><a class='fillItem'>{text}</a><a class='fillItemDelete'>✖</a>         </div>          </li>{/.}";
+      var compiled = dust.compile(template, "list");
+      dust.loadSource(compiled);
+
+console.log($("ftg .close").length);
+  }
+
+
+
+
+function renderList()
+{
   chrome.storage.sync.get('fillList', function(data) {
         console.log(data);
-       dust.render("list", data.fillList, function(err, out) {
-$('ftg inner').append($.parseHTML(out));
-  console.log(out);
-});
-    });
+        dust.render("list", data.fillList, function(err, out) {
+          $('ftg inner').append($.parseHTML(out));
+          console.log(out);
+// test();
+        });
+      });
+}
 
- 
-   
+function setup()
+{
 
-//
+renderList();
+  $("ftg .close").click(close);
+  $("ftg .add").click(add);
+}
 
+init();
+
+  return {
+    //renderList: function () {
+    //  renderList();
+    //},
+    setup: function () {
+      setup();
     },
   };
 
@@ -180,14 +218,6 @@ function FillCtrl($scope)
     //pageAccessor.setValue(item.text);
     focusTracer.setValue(item.text);
   }
-
-
-  $scope.close = function()
-  {
-     $('#AT_Manuel_Root').remove();
-  //  alert("close");
-  }
-
 
 var persist = function(){
   chrome.storage.sync.set({ fillList: $scope.fillList});

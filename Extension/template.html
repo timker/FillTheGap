@@ -51,19 +51,16 @@ ul {
 
 
   <ftg id="AT_Manuel_Root" class="manuel-dock" ng-controller="FillCtrl" ng-app>
-    <inner>
-     
-      
+    <inner>    
     </inner>
     <addItem>
-    <form ng-submit="addItem()">
-          <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
-          <input class="btn-primary" type="submit" value="add">
-        </form>
-   
+      <form ng-submit="addItem()">
+        <input type="text" ng-model="newItemText"  size="30" placeholder="add new item here">
+        <input class="btn-primary add" type="button" value="add">
+      </form>
     </addItem>
     <close>
-      <div class="close" ng-click="close()"></div>
+      <div class="close"></div>
     </close>
   </div>
 </ftg>

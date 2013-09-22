@@ -34,9 +34,9 @@ function onContextClickHandler(info, tab) {
 			//console.time("InjectPoly");
 			//chrome.tabs.executeScript(tab.id, { file: "bower_components/polymer/polymer.min.js" }, function() {
 			//console.timeEnd("InjectPoly");
-				console.time("InjectAnj");
-				chrome.tabs.executeScript(tab.id, { file: "Scripts/angular.js" }, function() {
-					console.timeEnd("InjectAnj");
+			//	console.time("InjectAnj");
+			//	chrome.tabs.executeScript(tab.id, { file: "Scripts/angular.js" }, function() {
+			//		console.timeEnd("InjectAnj");
 					console.time("InjectCS");
 
 					chrome.tabs.executeScript(tab.id, {file: "contentscript.js"}, function(){
@@ -45,7 +45,7 @@ function onContextClickHandler(info, tab) {
 						chrome.tabs.executeScript(tab.id, {file: "iframeContentScript.js",allFrames :true},function(){console.timeEnd("InjectAll");});	
 					});
 			
-				});
+			//	});
 			//});
 			});
 			});
