@@ -2,40 +2,23 @@
 
  (function() {
 
+    // todo maybe wrap all of content in element so we can delete everything
     $('ftg').remove();
-     // this is to disable double loading
-     // this could be used for a "close" button
-     // if(document.getElementById('AT.Manuel.Root'))
-     // {
-     //   $(document.getElementById('AT.Manuel.Root')).remove();
-     //   return;
-     // }
+     
 
     // todo should we add simpple html element as the next request/work might be slow
     $.get(chrome.extension.getURL('/template.html'), function(data) {
         $("body").after(data);
-        //safer loading
-        //could find the first ref to ng-app or put at bottom, to in AT.Manuel.Root 
-      
-        // Or if you're using jQuery 1.8+:
-        // this might still work if we convert to element first, instead of text?
-        // $($.parseHTML(data)).appendTo('body');
-
-       // var first = document.getElementById('AT_Manuel_Root');
-       // angular.element(first).ready(function() {
-          //  console.log(first);
-       //   angular.bootstrap(first);
-       // });
 
 
-// todo move into controller so we can remove setup method
-    //ftg wrapper
-var shadow = document.querySelector('#AT_Manuel_Root').webkitCreateShadowRoot();
-var template = document.querySelector('#ftgtemplate');
-shadow.appendChild(template.content);
+      // todo move into controller so we can remove setup method
+      //ftg wrapper
+      var shadow = document.querySelector('#AT_Manuel_Root').webkitCreateShadowRoot();
+      var template = document.querySelector('#ftgtemplate');
+      shadow.appendChild(template.content);
 
-//possible race condition
-fillController.setup();
+      //possible race condition
+      fillController.setup();
     });
 })();
 
@@ -150,13 +133,14 @@ var fillController = (function ()
     return index;
   }
 
-function applyItemToTextField(event)
-{
-  //debugger;
-  console.log(event);
-  var id = getItemId(event.target);
-    focusTracer.setValue(fillList.fillList[id].text);
-}
+  //rename
+  function applyItemToTextField(event)
+  {
+    //debugger;
+    console.log(event);
+    var id = getItemId(event.target);
+      focusTracer.setValue(fillList.fillList[id].text);
+  }
 
   var persist = function(){
     console.log(fillList);
@@ -165,7 +149,7 @@ function applyItemToTextField(event)
 
   function init() {
     //todo move templating to compile
-    var template ="{#fillList}<li  data-index='{$idx}' class='fillItemContainer' ><div><a class='fillItem'>({$idx}){text} {@idx}{.}{/idx} </a><a class='fillItemDelete'>✖</a> </div></li>{/fillList}";
+    var template ="{#fillList}<li  data-index='{$idx}' class='fillItemContainer' ><div><a class='fillItem'>{text} {@idx}{.}{/idx} </a><a class='fillItemDelete'>✖</a> </div></li>{/fillList}";
     var compiled = dust.compile(template, "list");
     dust.loadSource(compiled);
 
