@@ -55,33 +55,24 @@ ul {
 @host {
 
   close{
-  margin: 3px;
-  height: 15px;
-  border: 1px solid #ccc;
-display: block;
-/* nneded??? ----------
-height: 20px;
-width: 100%;
-
-*/
+    margin: 3px;
+    height: 15px;
+    border: 1px solid #ccc;
+    display: block;
   }
 
 
-close:hover  {
-/*  font-size: 30px;*/
-  background: #f6f6f6;
-cursor: pointer;
-} /* Applies to any type of element hosting this ShadowRoot. */
-  
-
-
-}
+  close:hover  {
+    /*  font-size: 30px;*/
+    background: #f6f6f6;
+    cursor: pointer;
+  } 
 }
 </style>  
 </template>
 
 
-  <ftg id="AT_Manuel_Root" class="manuel-dock"  ng-app>
+<ftg id="AT_Manuel_Root" class="manuel-dock">
     <inner>    
     </inner>
     <addItem>
@@ -90,16 +81,6 @@ cursor: pointer;
         <input class="btn-primary add" type="submit" value="add">
       </form>
     </addItem>
-    <close>
-      <div class="close"></div>
-    </close>
+    <close/>
   </div>
 </ftg>
-
-
-<script type="text/javascript">
-//load
-
-
-
-</script>

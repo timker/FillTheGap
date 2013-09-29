@@ -12,13 +12,6 @@ if (window != top) {
 
 
 
-
-
-
-
-
-
-
 //todo bug this loads twice if we context twice
 (function(focusNavigator) {
   var currentValidFocus;

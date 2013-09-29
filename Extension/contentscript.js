@@ -17,8 +17,6 @@
       var template = document.querySelector('#ftgtemplate');
       shadow.appendChild(template.content);
 
-
-//debugger;
       var closeshadow = document.querySelector('ftg > close').webkitCreateShadowRoot();
       var closetemplate = document.querySelector('#ftgtemplateclose');
       closeshadow.appendChild(closetemplate.content);
@@ -38,18 +36,22 @@ var focusTracer = (function(focusNavigator) {
 
   var frameSource = null;
 
-  function receiveMessage(event)  {
-    //alert("revice");
+  function receiveMessage(event)  {  
     //would it be worth checking that active tab is an iframe here?
         console.log(event);
-        currentValidFocus = null;
-        frameSource = event.source;
-        console.log("frameSource");
-        console.log(frameSource);
+        if(event.data && event.data.iframeActive && event.data.iframeActive === true)
+        {
+                currentValidFocus = null;
+                frameSource = event.source;
+                console.log("frameSource");
+                console.log(frameSource);
+        }
+
         //we might be able to keep connection to origin frame
         //https://developer.mozilla.org/en-US/docs/Web/API/window.postMessage
   };
-  //
+  
+
   init = function(){
     //todo only if a input/iframe and not in AT_Manuel_Root 
     //content script is loaded only on input/contenteditable so this should be safe (as log as this loads fast)
@@ -67,6 +69,7 @@ var focusTracer = (function(focusNavigator) {
       //why are we using activeElement instead of e.target?
       currentValidFocus = document.activeElement;
       frameSource = null;
+      console.log("top fouc");
 
     });
     $(document).focusout(function(e) {
@@ -82,7 +85,7 @@ var focusTracer = (function(focusNavigator) {
 
   init();
 
-return {
+  return {
     setValue: function (value) {
       if(frameSource)
       {
@@ -94,7 +97,6 @@ return {
         $(currentValidFocus).val(value);
         focusNavigator.next(currentValidFocus);
       }
-     // nextItem();
     }
   };
 
