@@ -17,6 +17,13 @@
       var template = document.querySelector('#ftgtemplate');
       shadow.appendChild(template.content);
 
+
+//debugger;
+      var closeshadow = document.querySelector('ftg > close').webkitCreateShadowRoot();
+      var closetemplate = document.querySelector('#ftgtemplateclose');
+      closeshadow.appendChild(closetemplate.content);
+
+
       //possible race condition
       fillController.setup();
     });
@@ -153,7 +160,6 @@ var fillController = (function ()
     var compiled = dust.compile(template, "list");
     dust.loadSource(compiled);
 
-    console.log($("ftg .close").length);
   }
 
   function renderList()
@@ -172,7 +178,7 @@ var fillController = (function ()
   function setup()
   {
     renderList();
-    $("ftg .close").click(close);
+    $("ftg > close").click(close);
     $("ftg form").submit(add);
     $("ftg").on("click", "li .fillItem", applyItemToTextField);
     $("ftg").on("click", "li .fillItemDelete", deleteItem);
