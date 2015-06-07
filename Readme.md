@@ -7,7 +7,9 @@ none, just download and "Load unpacked Extension" to the "Extension\" folder.
 
 ### Test
 npm install
-simple-server examples
+
+node node_modules/simple-server/bin/simple-server.js
+
 
 ### deploy
 grunt
