@@ -1,0 +1,23 @@
+{
+  "name": "FillTheGap",
+  "version": "0.0.0",
+  "homepage": "https://github.com/timker/FillTheGap",
+  "authors": [
+    "timker"
+  ],
+  "directory": "Extension/bower_components/",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Extension/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "handlebars": "~1.0.0",
+    "dustjs-linkedin": "~2.0.3"
+  }
+}
